@@ -348,7 +348,7 @@ reportschannel.send(reportEmbed);
        //https://www.youtube.com/watch?v=ukiVc8FSSpY&list=PLdnyVeMcpY7-GfaXaWBOb3ZQkJxP53BIx&index=4
    }
   if(command === "yardım") {
-  msg.channel.sendMessage(`**Selam, ben ${bot.user.username}!** Şuanda görmekte olduğunuz kısım benim bütün komutlarımı göstermektedir.
+  msg.channel.sendMessage(`**Selam, ben ** Şuanda görmekte olduğunuz kısım benim bütün komutlarımı göstermektedir.
 **Bilgi Komutları**
 \`\`\`fix
 !yardım - Botun bütün komutlarını size gösterir.
