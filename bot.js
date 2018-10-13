@@ -347,8 +347,33 @@ reportschannel.send(reportEmbed);
        return;
        //https://www.youtube.com/watch?v=ukiVc8FSSpY&list=PLdnyVeMcpY7-GfaXaWBOb3ZQkJxP53BIx&index=4
    }
+  if(command === "yardım") {
+  msg.channel.sendMessage(`**Selam, ben ${bot.user.username}!** Şuanda görmekte olduğunuz kısım benim bütün komutlarımı göstermektedir.
+**Bilgi Komutları**
+\`\`\`fix
+!yardım - Botun bütün komutlarını size gösterir.
+!sunucubilgi - Sunucu hakkkında detaylı bilgi verir.
+!botbilgi - Bot hakkında bilgi verir.
+!profil - Etiketlenen Kişinin Profil Bilgilerini Gösterir.
+\`\`\`
 
-    if(command === 'yardım') {
+**Eğlence Komutları**
+\`\`\`fix
+!yaz - Yazılan Mesajın Aynısını Yazar.
+!resim  - Etiketlenen Kişinin Profil Resmini Gösterir.
+\`\`\`
+
+**Moderatör Komutları**
+\`\`\`fix
+!ban - Kişiyi Sunucudan Geçerli Bir Sebepten Dolayı Yasaklar/Banlar.
+!kick - Kişiyi Sunucudan Geçerli Bir Sebepten Dolayı Atar/kickler.
+!report - Kişiyi Report Eder.
+!sus - Susturma Engeli Koyar.
+!konuş - Susturma Engelini Kaldırır.
+!temizle - Belirtilen Sayı Kadar Mesaj Siler.
+\`\`\` `)
+}
+    if(command === 'help') {
       let embed = new Discord.RichEmbed()
       .setAuthor(msg.author.username)
       .setDescription("**!Yardım Komutuna Göre ;**", true)
