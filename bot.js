@@ -39,26 +39,6 @@ client.on('ready', () => {
   client.on('guildDelete', guild => {
     console.log(`Hey Yusuf Ben ${member.guild.name} Adlı Serverden Çıktım Çıkış Tarihim = ${new Date()}`);
  });
- //client.on("guildCreate", guild => {
-  //const çenil = guild.channels.find('name', 'general');
-  //const anan = guild.channels.find("name", "sohbet");
-      //let channel = guild.channels.find("name", "general");
-      //let anan = guild.channels.find("name", "sohbet");
-      //let li = guild.channels.find("name", "lei-lia-li");
-    //if(!anan) return;
-    //anan.send("@everyone Merhaba Ben Yusuf Adlı Kişi Tarafından Kodlandım  \n Bende 1 Den Çok Komut Var! \n !yardım , !botbilgi ")
-    anan.send("@everyone \n Merhaba Ben **Yusuf** Adlı Kişi Tarafından Kodlandım  \n Bende **10 Dan Çok** Komut Var! \n **!yardım** , **!botbilgi**")
-    //channel.send("@everyone Merhaba Ben Yusuf Adlı Kişi Tarafından Kodlandım  \n Bende 1 Den Çok Komut Var! \n !yardım , !botbilgi")
-
-    //Ben Yusuf Adlı Kişi Tarafından Kodlandım  \n Bende 1 Den Çok Komut Var! \n !yardım , !botbilgi
- //});
- //client.on("messageDelete", Message => {
-   //let anan = member.guild.channels.find('name', 'mod-log');
-   //if(!anan) return; message.reply("Bir Kullanıcı Mesaj Sildim Fakat Bunu Gondermem İcin mod-log Yazı Kanalı Gerekiyor");
-
-   //channel.sendMessage(`**${messageDelete.author}** , **${messageDelete.channel}** Yazı Kanalında **${message.author}** Adlı Kişinin Mesajını Sildi Silinen Mesaj : **${message.author.lastMessage}**`);
- //});
-  //------------------------
  client.on("guildMemberAdd", function(member) {
  const channel = member.guild.channels.find('name', 'mod-log');
   // Do nothing if the channel wasn't found on this server
