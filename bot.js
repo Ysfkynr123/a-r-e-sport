@@ -461,4 +461,4 @@ reportschannel.send(reportEmbed);
 
 });
 
-client.login(procces.env.bot);
+client.login(process.env.bot);
