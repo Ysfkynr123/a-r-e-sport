@@ -1,0 +1,14 @@
+{
+  "name": "air",
+  "version": "1.0.0",
+  "description": "AIR ozel",
+  "main": "bot.js",
+  "scripts": {
+    "test": "node bot.js"
+  },
+  "author": "Yusuf",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
+}
