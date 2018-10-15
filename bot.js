@@ -206,7 +206,7 @@ client.on('message', msg => {
     if(command === "sus") {
       let mUser = msg.guild.member(msg.mentions.users.first () || msg.guild.members.get(args[0]));
       let mlg = msg.guild.channels.find("name", "mod-log")
-      if(!mUser) msg.reply("Kullanıcı Bulunamadı!")
+if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!sus @Kullanıcı#1233 ]** Yazmalısın!")
 
       mUser.addRole(mUser.guild.roles.find("name", "mute"));
       mlg.send(`**<@${msg.author.id}>** , **${mUser}** Adlı Kişiyi **Sus**turdu`)
@@ -215,8 +215,8 @@ client.on('message', msg => {
      if(command === "konuş") {
       let mUser = msg.guild.member(msg.mentions.users.first () || msg.guild.members.get(args[0]));
       let mlg = msg.guild.channels.find("name", "mod-log")
-      if(!mUser) msg.reply("Kullanıcı Bulunamadı!")
-
+if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!konuş @Kullanıcı#1233 ]** Yazmalısın!")
+       
       mUser.removeRole(mUser.guild.roles.find("name", "mute"));
       mlg.send(`**<@${msg.author.id}>** , **${mUser}** Adlı Kişinin **Sus**turma Engelini **Kaldırdı**`)
       msg.channel.send(`**<@${msg.author.id}>** , **${mUser}** Adlı Kişinin **Sus**turma Engelini **Kaldırdı**`)
@@ -235,7 +235,7 @@ client.on('message', msg => {
     if(command === "mute") {
       let mUser = msg.guild.member(msg.mentions.users.first () || msg.guild.members.get(args[0]));
       let mlg = msg.guild.channels.find("name", "mod-log")
-      if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!mute @Kullanıcı#1233 Sebep]** Yazmalısın!")
+      if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!mute @Kullanıcı#1233 ]** Yazmalısın!")
       
       mUser.addRole(mUser.guild.roles.find("name", "mute"));
       mlg.send(`**<@${msg.author.id}>** , **${mUser}** Adlı Kişiyi **Sus**turdu`)
@@ -244,7 +244,7 @@ client.on('message', msg => {
      if(command === "unmute") {      
       let mUser = msg.guild.member(msg.mentions.users.first () || msg.guild.members.get(args[0]));
       let mlg = msg.guild.channels.find("name", "mod-log")
-      if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!unmute @Kullanıcı#1233 Sebep]** Yazmalısın!")
+      if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!unmute @Kullanıcı#1233]** Yazmalısın!")
 
       mUser.removeRole(mUser.guild.roles.find("name", "mute"));
       mlg.send(`**<@${msg.author.id}>** , **${mUser}** Adlı Kişinin **Sus**turma Engelini **Kaldırdı**`)
