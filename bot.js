@@ -148,7 +148,7 @@ client.on('message', msg => {
 
       if(!msg.member.hasPermission("MANAGE_MESSAGES")) return msg.channel.send(`:no_entry: Geçersiz İşlem! \n Mesaj Silme Yetkin YOK **${msg.author.username}**`)
         if (isNaN(args[0])) {
-          msg.channel.send("Lutfen Bir Kelime Belirtin! \n Örnek = !temizle `2`");
+          msg.channel.send("Lutfen Bir Kelime Belirtin! \n Örnek = !sil `2`");
           return;
         }
       msg.channel.bulkDelete(fetched)
@@ -173,7 +173,7 @@ client.on('message', msg => {
 
       if(!msg.member.hasPermission("MANAGE_MESSAGES")) return msg.channel.send(`:no_entry: Geçersiz İşlem! \n Mesaj Silme Yetkin YOK **${msg.author.username}**`)
         if (isNaN(args[0])) {
-          msg.channel.send("Lutfen Bir Kelime Belirtin! \n Örnek = !sil ``2``");
+          msg.channel.send("Lutfen Bir Kelime Belirtin! \n Örnek = !temizle ``2``");
           return;
         }
 
@@ -235,15 +235,16 @@ client.on('message', msg => {
     if(command === "mute") {
       let mUser = msg.guild.member(msg.mentions.users.first () || msg.guild.members.get(args[0]));
       let mlg = msg.guild.channels.find("name", "mod-log")
-      if(!mUser) msg.reply("Kullanıcı Bulunamadı!")
-
+      if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!mute @Kullanıcı#1233 Sebep]** Yazmalısın!")
+      
       mUser.addRole(mUser.guild.roles.find("name", "mute"));
       mlg.send(`**<@${msg.author.id}>** , **${mUser}** Adlı Kişiyi **Sus**turdu`)
       msg.channel.send(`**<@${msg.author.id}>** , **${mUser}** Adlı Kişiyi **Sus**turdu`)
      }
-     if(command === "unmute") {      let mUser = msg.guild.member(msg.mentions.users.first () || msg.guild.members.get(args[0]));
+     if(command === "unmute") {      
+      let mUser = msg.guild.member(msg.mentions.users.first () || msg.guild.members.get(args[0]));
       let mlg = msg.guild.channels.find("name", "mod-log")
-      if(!mUser) msg.reply("Kullanıcı Bulunamadı!")
+      if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!unmute @Kullanıcı#1233 Sebep]** Yazmalısın!")
 
       mUser.removeRole(mUser.guild.roles.find("name", "mute"));
       mlg.send(`**<@${msg.author.id}>** , **${mUser}** Adlı Kişinin **Sus**turma Engelini **Kaldırdı**`)
