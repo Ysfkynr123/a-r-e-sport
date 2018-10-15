@@ -263,6 +263,7 @@ if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!konuş @Kulla
         var durm = (Durum == "online" ? ("Çevrimiçi") : (Durum == "offline" ? ("Çevrimdışı") : (Durum == "idle" ? ("Boşta") : (Durum == "dnd" ? ("Rahatsız Etmeyin") : ("Bilinmiyor/bulunamadı.")))))
       const kullanicibilgimk = new Discord.RichEmbed()
      let pUser = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
+       const kullanicibilgimk = new Discord.RichEmbed()
       .setAuthor(msg.author.username, msg.author.avatarURL)
       .setColor(Durm)
       .setTimestamp()
