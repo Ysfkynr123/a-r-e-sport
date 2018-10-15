@@ -413,7 +413,7 @@ reportschannel.send(reportEmbed);
 
 //      .addField("**!sus**", "mute Adlı Rol Oluşturmak Şartı İle Kişiye Mute Atar")
 //
-      .addField("**!konuş**", "mute Adlı Rol Oluşturması Şartı İle Susturulan Kişinin Susutrma Engelini Kaldırır")
+ //     .addField("**!konuş**", "mute Adlı Rol Oluşturması Şartı İle Susturulan Kişinin Susutrma Engelini Kaldırır")
 //
  //     .addField("Diğer Şeyler", "Bot Küfür Engeller Yeni Üye Mesajı Vb. Mesajlar Vardır ")
 
