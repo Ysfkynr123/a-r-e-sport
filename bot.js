@@ -256,7 +256,7 @@ if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!konuş @Kulla
     msg.reply('Bu Discord Benim Korumam Altında Ve Reklam Yapman Yasak!');
   }
 });
-    if (command === "kullanıcıbilgi")
+    if (command === "profil")
     if (msg.channel.type !== "group") {
         var Durum = msg.author.presence.status;
         var Durm = (Durum == "online" ? (0x00AE86) : (Durum == "offline" ? (0x808080) : (Durum == "idle" ? (0xFFFF00) : (Durum == "dnd" ? (0xFF0000) : (0x00AE86)))))
@@ -271,7 +271,6 @@ if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!konuş @Kulla
       .addField('Durum:', durm)
       .addField('Şu an oynadığı oyun:', msg.author.presence.game ? msg.author.presence.game.name : 'Şu an oyun oynamıyor')
       .addField('BOT mu?', msg.author.bot ? '\n Evet' : 'Hayır')
-      console.log("!kullanıcıbilgim komutu " + msg.author.username + " tarafından kullanıldı.")
       return msg.channel.sendEmbed(kullanicibilgimk);
   }
     if(command === 'ban') {
@@ -392,38 +391,38 @@ reportschannel.send(reportEmbed);
 !temizle - Belirtilen Sayı Kadar Mesaj Siler.
 \`\`\` `)
 }
-    if(command === 'help') {
-      let embed = new Discord.RichEmbed()
-      .setAuthor(msg.author.username)
-      .setDescription("**!Yardım Komutuna Göre ;**", true)
+ //   if(command === 'help') {
+ //     let embed = new Discord.RichEmbed()
+//      .setAuthor(msg.author.username)
+//      .setDescription("**!Yardım Komutuna Göre ;**", true)
 
 
-      .addField("**!yardım**", "Botla İlgili Komutları Gösterir")
+//      .addField("**!yardım**", "Botla İlgili Komutları Gösterir")
 
-      .addField("**!sunucubilgi**", "Sunucu İle Bilgiler Gosterir", true)
+//      .addField("**!sunucubilgi**", "Sunucu İle Bilgiler Gosterir", true)
 
-      .addField("**!botbilgi**", "Bot İle İlgili Bilgiler Verir", true)
+//      .addField("**!botbilgi**", "Bot İle İlgili Bilgiler Verir", true)
 
-      .addField("**!temizle**", "Temizle Ve Bir Sayı Yazınca Mesajlar Silinir!!", true)
+//      .addField("**!temizle**", "Temizle Ve Bir Sayı Yazınca Mesajlar Silinir!!", true)
 
-      .addField("**!yaz**", "!yaz Yazdıktan Sonra Bir Mesaj Belirt Ve Yetkin Varsa O Mesajı Bot Yazsın!", true)
+//      .addField("**!yaz**", "!yaz Yazdıktan Sonra Bir Mesaj Belirt Ve Yetkin Varsa O Mesajı Bot Yazsın!", true)
 
-      .addField("**!at**", "!at @{nick} {sebep} Belirtilen Kisiyi Sunucuda Bir Nedenden dolayı Kickler", true)
+//      .addField("**!at**", "!at @{nick} {sebep} Belirtilen Kisiyi Sunucuda Bir Nedenden dolayı Kickler", true)
 
-      .addField("**!ban**", "!ban @{nick} {sebep} Belirtilen Kisiyi Sunucuda Bir Nedenden dolayı BANLAR", true)
+//      .addField("**!ban**", "!ban @{nick} {sebep} Belirtilen Kisiyi Sunucuda Bir Nedenden dolayı BANLAR", true)
 
-      .addField("**!sus**", "mute Adlı Rol Oluşturmak Şartı İle Kişiye Mute Atar")
-
+//      .addField("**!sus**", "mute Adlı Rol Oluşturmak Şartı İle Kişiye Mute Atar")
+//
       .addField("**!konuş**", "mute Adlı Rol Oluşturması Şartı İle Susturulan Kişinin Susutrma Engelini Kaldırır")
+//
+ //     .addField("Diğer Şeyler", "Bot Küfür Engeller Yeni Üye Mesajı Vb. Mesajlar Vardır ")
 
-      .addField("Diğer Şeyler", "Bot Küfür Engeller Yeni Üye Mesajı Vb. Mesajlar Vardır ")
 
+ //     .setThumbnail(msg.author.avatarURL, true)
 
-      .setThumbnail(msg.author.avatarURL, true)
-
-      .setColor(0xff0000)
-      return msg.channel.sendEmbed(embed);
-    }
+      //.setColor(0xff0000)
+      //return msg.channel.sendEmbed(embed);
+    //}
 
     if(command === "resim") {
       let message = msg.channel.send("Profil Fotoğrafı Yollanıyor...");
@@ -471,7 +470,7 @@ reportschannel.send(reportEmbed);
 
         .addField("**Bot Komutları**", "**!Yardım** Yazarak Öğrenebilirsiniz!")
 
-        .addField("**Bottaki Komut Sayısı**", "11")
+        .addField("**Bottaki Komut Sayısı**", "12")
 
         .addField("Botu Eklemek İçin", " https://discordapp.com/oauth2/authorize?client_id=406095553928101890&scope=bot&permissions=2146958591")
 
