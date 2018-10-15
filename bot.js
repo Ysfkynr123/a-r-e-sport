@@ -256,6 +256,24 @@ if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!konuş @Kulla
     msg.reply('Bu Discord Benim Korumam Altında Ve Reklam Yapman Yasak!');
   }
 });
+    if (command === "kullanıcıbilgi")
+    if (msg.channel.type !== "group") {
+        var Durum = msg.author.presence.status;
+        var Durm = (Durum == "online" ? (0x00AE86) : (Durum == "offline" ? (0x808080) : (Durum == "idle" ? (0xFFFF00) : (Durum == "dnd" ? (0xFF0000) : (0x00AE86)))))
+        var durm = (Durum == "online" ? ("Çevrimiçi") : (Durum == "offline" ? ("Çevrimdışı") : (Durum == "idle" ? ("Boşta") : (Durum == "dnd" ? ("Rahatsız Etmeyin") : ("Bilinmiyor/bulunamadı.")))))
+      const kullanicibilgimk = new Discord.RichEmbed()
+      .setAuthor(msg.author.username, msg.author.avatarURL)
+      .setColor(Durm)
+      .setTimestamp()
+      .addField('Ad:', msg.author.username + '#' + msg.author.discriminator)
+      .addField('ID:', msg.author.id)
+      .addField('Kayıt tarihi:', msg.author.createdAt)
+      .addField('Durum:', durm)
+      .addField('Şu an oynadığı oyun:', msg.author.presence.game ? msg.author.presence.game.name : 'Şu an oyun oynamıyor')
+      .addField('BOT mu?', msg.author.bot ? '\n Evet' : 'Hayır')
+      console.log("!kullanıcıbilgim komutu " + msg.author.username + " tarafından kullanıldı.")
+      return msg.channel.sendEmbed(kullanicibilgimk);
+  }
     if(command === 'ban') {
       let bUser = msg.guild.member(msg.mentions.users.first () || msg.guild.members.get(args[0]));
       if(!bUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!ban @Kullanıcı#1233 Sebep]** Yazmalısın!")
