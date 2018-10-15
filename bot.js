@@ -262,10 +262,11 @@ if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!konuş @Kulla
         var Durm = (Durum == "online" ? (0x00AE86) : (Durum == "offline" ? (0x808080) : (Durum == "idle" ? (0xFFFF00) : (Durum == "dnd" ? (0xFF0000) : (0x00AE86)))))
         var durm = (Durum == "online" ? ("Çevrimiçi") : (Durum == "offline" ? ("Çevrimdışı") : (Durum == "idle" ? ("Boşta") : (Durum == "dnd" ? ("Rahatsız Etmeyin") : ("Bilinmiyor/bulunamadı.")))))
       const kullanicibilgimk = new Discord.RichEmbed()
+     let pUser = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
       .setAuthor(msg.author.username, msg.author.avatarURL)
       .setColor(Durm)
       .setTimestamp()
-      .addField('Ad:', msg.author.username + '#' + msg.author.discriminator)
+      .addField('Ad:',  `${pUser.user.name}*` + '#' + msg.author.discriminator)
       .addField('ID:', msg.author.id)
       .addField('Kayıt tarihi:', msg.author.createdAt)
       .addField('Durum:', durm)
@@ -372,7 +373,7 @@ reportschannel.send(reportEmbed);
 !yardım - Botun bütün komutlarını size gösterir.
 !sunucubilgi - Sunucu hakkkında detaylı bilgi verir.
 !botbilgi - Bot hakkında bilgi verir.
-!profil - Etiketlenen Kişinin Profil Bilgilerini Gösterir.
+!profil - Mesaj Sahibinin Profil Bilgilerini Gösterir.
 \`\`\`
 
 **Eğlence Komutları**
