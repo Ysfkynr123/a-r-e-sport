@@ -267,7 +267,7 @@ if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!konuş @Kulla
       .setTimestamp()
       .addField('Kullanıcı İsmin:', msg.author.username + '#' + msg.author.discriminator)
       .addField('ID:', msg.author.id)
-      .addField('Kayıt tarihi:', msg.author.createdAt)
+      .addField('Discord Uygulamasına Kayıt tarihi:', msg.author.createdAt)
       .addField('Durum:', durm)
       .addField('Şu an oynadığı oyun:', msg.author.presence.game ? msg.author.presence.game.name : 'Şu an oyun oynamıyor')
       .addField('BOT mu?', msg.author.bot ? '\n Evet' : 'Hayır')
