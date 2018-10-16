@@ -250,12 +250,6 @@ if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!konuş @Kulla
       mlg.send(`**<@${msg.author.id}>** , **${mUser}** Adlı Kişinin **Sus**turma Engelini **Kaldırdı**`)
       msg.channel.send(`**<@${msg.author.id}>** , **${mUser}** Adlı Kişinin **Sus**turma Engelini **Kaldırdı**`)
     }
-    client.on('message', msg => {
-  if(msg.content.toLowerCase === 'discord.gg') {
-   msg.delete(30)
-    msg.reply('Bu Discord Benim Korumam Altında Ve Reklam Yapman Yasak!');
-  }
-});
     if (command === "profil")
     if (msg.channel.type !== "group") {
         var Durum = msg.author.presence.status;
