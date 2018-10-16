@@ -196,7 +196,7 @@ client.on('message', msg => {
       msg.channel.send(botmessage);
       //// +  `\n**Mesaj Sahibi = ${msg.author.username}**`
     }
-    if(msg.content.toLowerCase() === prefix + "say") {
+    if(command === "say") {
       if(!msg.member.hasPermission("MANAGE_MESSAGES")) return msg.reply("Yetkin Yok!");
       let botmessage = args.join(" ");
         msg.delete();
@@ -495,7 +495,6 @@ reportschannel.send(reportEmbed);
 
       msg.channel.sendEmbed(embed);
       }
-    }
 });
 
 client.login(process.env.bot);
