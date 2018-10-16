@@ -375,7 +375,6 @@ reportschannel.send(reportEmbed);
     msg.channel.sendEmbed(ozelmesajkontrol) }
       msg.author.sendMessage("Link: https://discordapp.com/oauth2/authorize?client_id=398818322831114250&scope=bot&permissions=8").then(message => console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] Gönderilen mesaj: ${message.content}`)).catch(console.error);
   }
-});
   if(command === "yardım") {
   msg.channel.sendMessage(`**Selam, ben AIR'e Özel Bot#4672  ** Şuanda görmekte olduğunuz kısım benim bütün komutlarımı göstermektedir.
 **Bilgi Komutları**
