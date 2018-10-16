@@ -417,6 +417,17 @@ reportschannel.send(reportEmbed);
 !temizle - Belirtilen Sayı Kadar Mesaj Siler.
 \`\`\` `)
 }
+      if(command === "resim") {
+      let message = msg.channel.send("Profil Fotoğrafı Yollanıyor...");
+      let target = msg.mentions.users.first() || msg.author;
+        msg.channel.send({files: [
+          {
+            attachment: target.displayAvatarURL,
+            name: "resim.png"
+          }
+        ]});
+    }
+
   if(command === "botbilgi") {
         let embed = new Discord.RichEmbed()
 
@@ -439,7 +450,22 @@ reportschannel.send(reportEmbed);
 
     msg.channel.sendEmbed(embed);
       }
-  
+      if(command === "sunucubilgi") {
+         let embed = new Discord.RichEmbed()
+           .setAuthor(msg.author.username)
+           .setColor("#9B59B4")
+           .addField("Sunucu İsmi", msg.guild.name, true)
+           .addField("Sunucu ID", msg.guild.id, true)
+           .addField("Sunucu Kurucusu", msg.guild.owner)
+           .addField("Sunucu Kişi Sayısı", msg.guild.memberCount, true)
+           .addField("Oluşturulma Tarihi", msg.guild.createdAt)
+           .addField("AFK Kanalı", msg.guild.afkChannel,true)
+           .addField("AFK Kalma Suresi", msg.guild.afkTimeout + " Saniye")
+           .setThumbnail(msg.guild.iconURL)
+           //.setThumbnail(msg.author.avatarURL)
+
+      return msg.channel.sendEmbed(embed);
+    }
 });
 
 client.login(process.env.bot);
