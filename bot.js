@@ -288,6 +288,136 @@ if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!konuş @Kulla
       .addField('BOT mu?', msg.author.bot ? '\n Evet' : 'Hayır')
       return msg.channel.sendEmbed(kullanicibilgimk);
   }
+      if(command === 'ban') {
+      let bUser = msg.guild.member(msg.mentions.users.first () || msg.guild.members.get(args[0]));
+      if(!bUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!ban @Kullanıcı#1233 Sebep]** Yazmalısın!")
+      let bReason = args.join(" ").slice(22);
+      //if (msg.author.id !== "346789430012411904") return
+      let bEmbed = new Discord.RichEmbed()
+       .setDescription("Banlanan Kullanıcı!")
+       .setColor("#e56b00")
+       .addField("Banlanan Kullanıcı", `**${bUser}** Banlanan Kullanıcı ID Si **${bUser.id}**`)
+       .addField("Banlayan Kişi", `**<@${msg.author.id}>** Banlayan Kişi ID Si **${msg.author.id}**`)
+       .addField("Banlanma Zamanı", msg.createdAt)
+       .addField("Banlanma Nedeni", bReason);
+
+       let banChannel = msg.guild.channels.find(`name`, `mod-log`)
+       if(!banChannel) return msg.channel.send("mod-log Yazı Kanalı Bulunmadı")
+
+       msg.guild.member(bUser).ban(bReason)
+       banChannel.send(bEmbed);
+       return;
+       //https://www.youtube.com/watch?v=ukiVc8FSSpY&list=PLdnyVeMcpY7-GfaXaWBOb3ZQkJxP53BIx&index=4
+   }
+
+   if(command === 'at') {
+       let kUser = msg.guild.member(msg.mentions.users.first () || msg.guild.members.get(args[0]));
+       if(!kUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!at @Kullanıcı#1233 Sebep]** Yazmalısın! ")
+       let kReason = args.join(" ").slice(22);
+       if(!msg.member.hasPermission("KICK_MEMBERS")) return msg.channel.send("Bu Uyeyi Atmaya İznin YOK")
+
+
+       let kEmbed = new Discord.RichEmbed()
+        .setDescription("Atılan Kullanıcı!")
+        .setColor("#e56b00")
+        .addField("Atılan Kullanıcı", `${kUser} Atılan Kullanıcı ID Si **${kUser.id}**`)
+        .addField("Atan Kişi", `<@${msg.author.id}> Atan Kişi ID Si **${msg.author.id}**`)
+        .addField("Atılma Zamanı", msg.createdAt)
+        .addField("Atılma Nedeni", kReason);
+
+        let kickChannel = msg.guild.channels.find(`name`, `mod-log`)
+        if(!kickChannel) return msg.channel.send("mod-log Yazı Kanalı Bulunmadı")
+
+        msg.guild.member(kUser).kick(kReason)
+        kickChannel.send(kEmbed);
+        return;
+        //https://www.youtube.com/watch?v=ukiVc8FSSpY&list=PLdnyVeMcpY7-GfaXaWBOb3ZQkJxP53BIx&index=4
+    }
+     if(command === "report") {
+    let rUser = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
+    if(!rUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!report @Kullanıcı#1233 Sebep]** Yazmalısın! ")
+    let rreason = args.join(" ").slice(22);
+    if(!rreason) return msg.channel.send("Lütfen **Bir Sebep Belirt**.")
+
+let reportEmbed = new Discord.RichEmbed()
+.setDescription("Reports")
+.setColor("#15f153")
+.addField("Reportlanan Kullanıcı", `${rUser} ID: ${rUser.id}`)
+.addField("Reportlayan", `${msg.author} ID: ${msg.author.id}`)
+.addField("Kanal", msg.channel)
+.addField("Reportlanma Zamanı", msg.createdAt)
+.addField("Sebep", rreason);
+
+let reportschannel = msg.guild.channels.find(`name`, "mod-log");
+if(!reportschannel) return msg.channel.send("#mod-log Kanalı Bulunamadı!");
+
+
+msg.delete().catch(O_o=>{});
+reportschannel.send(reportEmbed);
+
+}
+
+     if(command === 'kick') {
+      let kUser = msg.guild.member(msg.mentions.users.first () || msg.guild.members.get(args[0]));
+      if(!kUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!kick @Kullanıcı#1233 Sebep]** Yazmalısın! ")
+      let kReason = args.join(" ").slice(22);
+      if(!msg.member.hasPermission("KICK_MEMBERS")) return msg.channel.send("Bu Uyeyi Atmaya İznin YOK")
+
+
+      let kEmbed = new Discord.RichEmbed()
+       .setDescription("Atılan Kullanıcı!")
+       .setColor("#e56b00")
+       .addField("Kicklenen Kullanıcı", `${kUser} Kicklenen Kullanıcı ID Si **${kUser.id}**`)
+       .addField("Kickleyen Kişi", `<@${msg.author.id}> Kickeleyen Kişi ID Si **${msg.author.id}**`)
+       .addField("Kickleme Zamanı", msg.createdAt)
+       .addField("Kicklenme Nedeni", kReason);
+
+       let kickChannel = msg.guild.channels.find(`name`, `mod-log`)
+       if(!kickChannel) return msg.channel.send("mod-log Yazı Kanalı Bulunmadı")
+
+       msg.guild.member(kUser).kick(kReason)
+       kickChannel.send(kEmbed);
+       return;
+       //https://www.youtube.com/watch?v=ukiVc8FSSpY&list=PLdnyVeMcpY7-GfaXaWBOb3ZQkJxP53BIx&index=4
+   }
+    if (command === 'invite') {
+    if (msg.channel.type !== 'dm') {
+      const ozelmesajkontrol = new Discord.RichEmbed()
+    .setColor(0x00AE86)
+    .setTimestamp()
+    .setAuthor(msg.author.username, msg.author.avatarURL)
+    .addField(msg.author.username, 'Özel mesajlarını kontrol et!. :postbox:');
+    msg.channel.sendEmbed(ozelmesajkontrol) }
+      msg.author.sendMessage("Link: https://discordapp.com/oauth2/authorize?client_id=398818322831114250&scope=bot&permissions=8").then(message => console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] Gönderilen mesaj: ${message.content}`)).catch(console.error);
+  }
+  if(command === "yardım") {
+  msg.channel.sendMessage(`**Selam, ben AIR'e Özel Bot#4672  ** Şuanda görmekte olduğunuz kısım benim bütün komutlarımı göstermektedir.
+**Bilgi Komutları**
+\`\`\`fix
+!yardım - Botun bütün komutlarını size gösterir.
+!sunucubilgi - Sunucu hakkkında detaylı bilgi verir.
+!botbilgi - Bot hakkında bilgi verir.
+!profil - Mesaj Sahibinin Profil Bilgilerini Gösterir.
+!invite - Bot'u Sunucuna Eklemen İçin Davet Linki Oluşturup Özel Mesaj Olarak Atar.
+\`\`\`
+
+**Eğlence Komutları**
+\`\`\`fix
+!yaz - Yazılan Mesajın Aynısını Yazar.
+!resim  - Etiketlenen Kişinin Profil Resmini Gösterir.
+\`\`\`
+
+**Moderatör Komutları**
+\`\`\`fix
+!ban - Kişiyi Sunucudan Geçerli Bir Sebepten Dolayı Yasaklar/Banlar.
+!kick - Kişiyi Sunucudan Geçerli Bir Sebepten Dolayı Atar/kickler.
+!report - Kişiyi Report Eder.
+!sus - Susturma Engeli Koyar.
+!konuş - Susturma Engelini Kaldırır.
+!temizle - Belirtilen Sayı Kadar Mesaj Siler.
+\`\`\` `)
+}
+  
 });
 
 client.login(process.env.bot);
