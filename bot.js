@@ -464,13 +464,6 @@ reportschannel.send(reportEmbed);
       return msg.channel.sendEmbed(embed);
     }
 
-       if (command === "invite") {
-         let embed = new Discord.RichEmbed()
-
-             .setDescription(`https://discordapp.com/oauth2/authorize?client_id=406095553928101890&scope=bot&permissions=2146958591`)
-
-          msg.channel.sendEmbed(embed);
-       }
   const girismesaj = [
   '**AIR e Özel Bot#4672 sunucunuza eklendi!**',
   '**AIR e Özel Bot#4672** sunucunuzdaki insanlara kolaylıklar sağlar.',
