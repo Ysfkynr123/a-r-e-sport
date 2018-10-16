@@ -472,7 +472,7 @@ reportschannel.send(reportEmbed);
 ]
 
 client.on('guildCreate', guild => {
-    const generalChannel = guild.defaultChannel
+    const generalChannel = 499931047019151372//guild.defaultChannel
     generalChannel.sendMessage(girismesaj)
 });
 
