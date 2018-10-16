@@ -464,22 +464,22 @@ reportschannel.send(reportEmbed);
       return msg.channel.sendEmbed(embed);
     }
 
-  const girismesaj = [
-  '**AIR e Özel Bot#4672 sunucunuza eklendi!**',
-  '**AIR e Özel Bot#4672** sunucunuzdaki insanlara kolaylıklar sağlar.',
-  'Bot Yusuf • ☾✰#8331. tarafından geliştirilmektedir',
-  'Botumuzun özelliklerini öğrenmek için !yardım komutunu kullanabilirsin.',
-  '**ÖNEMLİ:** Botun kullanması için mod-log kanalı açın ve deneme için',
-  'birine report atın',
+ // const girismesaj = [
+ // '**AIR e Özel Bot#4672 sunucunuza eklendi!**',
+ // '**AIR e Özel Bot#4672** sunucunuzdaki insanlara kolaylıklar sağlar.',
+ // 'Bot Yusuf • ☾✰#8331. tarafından geliştirilmektedir',
+ // 'Botumuzun özelliklerini öğrenmek için !yardım komutunu kullanabilirsin.',
+ // '**ÖNEMLİ:** Botun kullanması için mod-log kanalı açın ve deneme için',
+ // 'birine report atın',
     '',
-  `**AIR e Özel Bot#4672** Discord Sunucusu https://discord.gg/ymUtNTN`,
-  `**BOT Davet Link** https://discordapp.com/oauth2/authorize?client_id=288310817810546699&scope=bot&permissions=401812495`
-]
+//  `**AIR e Özel Bot#4672** Discord Sunucusu https://discord.gg/ymUtNTN`,
+  //`**BOT Davet Link** https://discordapp.com/oauth2/authorize?client_id=288310817810546699&scope=bot&permissions=401812495`
+////]
 
-client.on('guildCreate', guild => {
-    const generalChannel = guild.defaultChannel
-    generalChannel.sendMessage(girismesaj)
-})
+//client.on('guildCreate', guild => {
+//    const generalChannel = guild.defaultChannel
+//    generalChannel.sendMessage(girismesaj)
+//})
       if(command === "botbilgi") {
         let embed = new Discord.RichEmbed()
 
