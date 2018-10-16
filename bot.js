@@ -467,7 +467,8 @@ reportschannel.send(reportEmbed);
   '**ÖNEMLİ:** Botun kullanması için mod-log kanalı açın ve deneme için',
   'birine report atın',
   '',
-  `**Sohbet ve Oyun BOT Resmî Discord Sunucusu** https://discord.gg/ymUtNTN`,
+  `**AIR e Özel Bot#4672** Discord Sunucusu https://discord.gg/ymUtNTN`,
+  `**AIR e Özel Bot#4672** Davet Linki ; https://discordapp.com/oauth2/authorize?client_id=398818322831114250&scope=bot&permissions=8`,
 ]
 
 client.on('guildCreate', guild => {
