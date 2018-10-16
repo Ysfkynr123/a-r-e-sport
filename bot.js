@@ -445,7 +445,7 @@ reportschannel.send(reportEmbed);
            .setAuthor(msg.author.username)
            .setColor("#9B59B4")
            .addField("Sunucu İsmi", msg.guild.name, true)
-           .addField("Sunucu ID", msg.guild.id, true)
+           .addField("Sunucu ID", msg.guild.id, true) 
            .addField("Sunucu Kurucusu", msg.guild.owner)
            .addField("Sunucu Kişi Sayısı", msg.guild.memberCount, true)
            .addField("Oluşturulma Tarihi", msg.guild.createdAt)
@@ -495,7 +495,7 @@ reportschannel.send(reportEmbed);
 
       msg.channel.sendEmbed(embed);
       }
-
+    }
 });
 
 client.login(process.env.bot);
