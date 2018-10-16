@@ -466,16 +466,15 @@ reportschannel.send(reportEmbed);
   'Botumuzun özelliklerini öğrenmek için !yardım komutunu kullanabilirsin.',
   '**ÖNEMLİ:** Botun kullanması için mod-log kanalı açın ve deneme için',
   'birine report atın',
-  '',
+    '',
   `**AIR e Özel Bot#4672** Discord Sunucusu https://discord.gg/ymUtNTN`,
-  `**AIR e Özel Bot#4672** Davet Linki ; https://discordapp.com/oauth2/authorize?client_id=398818322831114250&scope=bot&permissions=8`,
+  `**BOT Davet Link** https://discordapp.com/oauth2/authorize?client_id=288310817810546699&scope=bot&permissions=401812495`
 ]
 
 client.on('guildCreate', guild => {
-    const generalChannel = 499931047019151372//guild.defaultChannel
+    const generalChannel = guild.defaultChannel
     generalChannel.sendMessage(girismesaj)
 });
-
       if(command === "botbilgi") {
         let embed = new Discord.RichEmbed()
 
