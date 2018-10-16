@@ -365,6 +365,17 @@ reportschannel.send(reportEmbed);
        return;
        //https://www.youtube.com/watch?v=ukiVc8FSSpY&list=PLdnyVeMcpY7-GfaXaWBOb3ZQkJxP53BIx&index=4
    }
+    if (command === 'invite') {
+    if (msg.channel.type !== 'dm') {
+      const ozelmesajkontrol = new Discord.RichEmbed()
+    .setColor(0x00AE86)
+    .setTimestamp()
+    .setAuthor(msg.author.username, msg.author.avatarURL)
+    .addField(msg.author.username, 'Özel mesajlarını kontrol et!. :postbox:');
+    msg.channel.sendEmbed(ozelmesajkontrol) }
+      msg.author.sendMessage("Link: https://discordapp.com/oauth2/authorize?client_id=398818322831114250&scope=bot&permissions=8").then(message => console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] Gönderilen mesaj: ${message.content}`)).catch(console.error);
+  }
+});
   if(command === "yardım") {
   msg.channel.sendMessage(`**Selam, ben AIR'e Özel Bot#4672  ** Şuanda görmekte olduğunuz kısım benim bütün komutlarımı göstermektedir.
 **Bilgi Komutları**
@@ -373,6 +384,7 @@ reportschannel.send(reportEmbed);
 !sunucubilgi - Sunucu hakkkında detaylı bilgi verir.
 !botbilgi - Bot hakkında bilgi verir.
 !profil - Mesaj Sahibinin Profil Bilgilerini Gösterir.
+!invite - Bot'u Sunucuna Eklemen İçin Davet Linki Oluşturup Özel Mesaj Olarak Atar.
 \`\`\`
 
 **Eğlence Komutları**
