@@ -39,6 +39,26 @@ client.on('ready', () => {
   client.on('guildDelete', guild => {
     console.log(`Hey Yusuf Ben ${member.guild.name} Adlı Serverden Çıktım Çıkış Tarihim = ${new Date()}`);
  });
+ client.on("guildCreate", guild => {
+  //const çenil = guild.channels.find('name', 'general');
+  //const anan = guild.channels.find("name", "sohbet");
+      let channel = guild.channels.find("name", "general");
+      let anan = guild.channels.find("name", "sohbet");
+      let li = guild.channels.find("name", "lei-lia-li");
+    //if(!anan) return;
+    //anan.send("@everyone Merhaba Ben Yusuf Adlı Kişi Tarafından Kodlandım  \n Bende 1 Den Çok Komut Var! \n !yardım , !botbilgi ")
+    anan.send("@everyone \n Merhaba Ben **Yusuf** Adlı Kişi Tarafından Kodlandım  \n Bende **10 Dan Çok** Komut Var! \n **!yardım** , **!botbilgi**")
+    //channel.send("@everyone Merhaba Ben Yusuf Adlı Kişi Tarafından Kodlandım  \n Bende 1 Den Çok Komut Var! \n !yardım , !botbilgi")
+
+    //Ben Yusuf Adlı Kişi Tarafından Kodlandım  \n Bende 1 Den Çok Komut Var! \n !yardım , !botbilgi
+ });
+ //client.on("messageDelete", Message => {
+   //let anan = member.guild.channels.find('name', 'mod-log');
+   //if(!anan) return; message.reply("Bir Kullanıcı Mesaj Sildim Fakat Bunu Gondermem İcin mod-log Yazı Kanalı Gerekiyor");
+
+   //channel.sendMessage(`**${messageDelete.author}** , **${messageDelete.channel}** Yazı Kanalında **${message.author}** Adlı Kişinin Mesajını Sildi Silinen Mesaj : **${message.author.lastMessage}**`);
+ //});
+  //------------------------
  client.on("guildMemberAdd", function(member) {
  const channel = member.guild.channels.find('name', 'mod-log');
   // Do nothing if the channel wasn't found on this server
@@ -139,30 +159,30 @@ client.on('message', msg => {
   const args = msg.content.slice(prefix.length).split(/ +/g);
   const command = args.shift().toLowerCase();
 
-    if(command ==="sil") {
-      let cont = msg.content.slice(prefix.length).split(" ");
-      let args = cont.slice(1);
+  if(command ==="sil") {
+    let cont = msg.content.slice(prefix.length).split(" ");
+    let args = cont.slice(1);
 
-      async function purge() {
-        let fetched = await msg.channel.fetchMessages({limit: args[0]});
+    async function purge() {
+      let fetched = await msg.channel.fetchMessages({limit: args[0]});
 
-      if(!msg.member.hasPermission("MANAGE_MESSAGES")) return msg.channel.send(`:no_entry: Geçersiz İşlem! \n Mesaj Silme Yetkin YOK **${msg.author.username}**`)
-        if (isNaN(args[0])) {
-          msg.channel.send("Lutfen Bir Kelime Belirtin! \n Örnek = !sil `2`");
-          return;
-        }
-      msg.channel.bulkDelete(fetched)
-      .catch(error =>  msg.channel.send(`Hata: ${error}`));
+    if(!msg.member.hasPermission("MANAGE_MESSAGES")) return msg.channel.send(`:no_entry: Geçersiz İşlem! \n Mesaj Silme Yetkin YOK **${msg.author.username}**`)
+      if (isNaN(args[0])) {
+        msg.channel.send("Lutfen Bir Kelime Belirtin! \n Örnek = !sil `2`");
+        return;
+      }
+    msg.channel.bulkDelete(fetched)
+    .catch(error =>  msg.channel.send(`Hata: ${error}`));
 
-      //https://www.youtube.com/watch?v=Zpxyio10Kj0
-      msg.channel.bulkDelete(args[0]).then(() => {
-        msg.channel.send(`:white_check_mark: Başarılı İşlem ! \n :gear: **${args[0]}** Mesaj Silindi! Silen Kişi = **${msg.author.username}**`)
-      });
+    //https://www.youtube.com/watch?v=Zpxyio10Kj0
+    msg.channel.bulkDelete(args[0]).then(() => {
+      msg.channel.send(`:white_check_mark: Başarılı İşlem ! \n :gear: **${args[0]}** Mesaj Silindi! Silen Kişi = **${msg.author.username}**`)
+    });
 //\n
-    }
-    purge();
-
   }
+  purge();
+
+}
   if(command === "temizle") {
       let cont = msg.content.slice(prefix.length).split(" ");
       let args = cont.slice(1);
@@ -196,7 +216,7 @@ client.on('message', msg => {
       msg.channel.send(botmessage);
       //// +  `\n**Mesaj Sahibi = ${msg.author.username}**`
     }
-    if(command === "say") {
+    if(msg.content.toLowerCase() === prefix + "say") {
       if(!msg.member.hasPermission("MANAGE_MESSAGES")) return msg.reply("Yetkin Yok!");
       let botmessage = args.join(" ");
         msg.delete();
@@ -206,7 +226,7 @@ client.on('message', msg => {
     if(command === "sus") {
       let mUser = msg.guild.member(msg.mentions.users.first () || msg.guild.members.get(args[0]));
       let mlg = msg.guild.channels.find("name", "mod-log")
-if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!sus @Kullanıcı#1233 ]** Yazmalısın!")
+      if(!mUser) msg.reply("Kullanıcı Bulunamadı!")
 
       mUser.addRole(mUser.guild.roles.find("name", "mute"));
       mlg.send(`**<@${msg.author.id}>** , **${mUser}** Adlı Kişiyi **Sus**turdu`)
@@ -215,8 +235,8 @@ if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!sus @Kullanı
      if(command === "konuş") {
       let mUser = msg.guild.member(msg.mentions.users.first () || msg.guild.members.get(args[0]));
       let mlg = msg.guild.channels.find("name", "mod-log")
-if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!konuş @Kullanıcı#1233 ]** Yazmalısın!")
-       
+      if(!mUser) msg.reply("Kullanıcı Bulunamadı!")
+
       mUser.removeRole(mUser.guild.roles.find("name", "mute"));
       mlg.send(`**<@${msg.author.id}>** , **${mUser}** Adlı Kişinin **Sus**turma Engelini **Kaldırdı**`)
       msg.channel.send(`**<@${msg.author.id}>** , **${mUser}** Adlı Kişinin **Sus**turma Engelini **Kaldırdı**`)
@@ -235,38 +255,26 @@ if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!konuş @Kulla
     if(command === "mute") {
       let mUser = msg.guild.member(msg.mentions.users.first () || msg.guild.members.get(args[0]));
       let mlg = msg.guild.channels.find("name", "mod-log")
-      if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!mute @Kullanıcı#1233 ]** Yazmalısın!")
-      
+      if(!mUser) msg.reply("Kullanıcı Bulunamadı!")
+
       mUser.addRole(mUser.guild.roles.find("name", "mute"));
       mlg.send(`**<@${msg.author.id}>** , **${mUser}** Adlı Kişiyi **Sus**turdu`)
       msg.channel.send(`**<@${msg.author.id}>** , **${mUser}** Adlı Kişiyi **Sus**turdu`)
      }
-     if(command === "unmute") {      
-      let mUser = msg.guild.member(msg.mentions.users.first () || msg.guild.members.get(args[0]));
+     if(command === "unmute") {      let mUser = msg.guild.member(msg.mentions.users.first () || msg.guild.members.get(args[0]));
       let mlg = msg.guild.channels.find("name", "mod-log")
-      if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!unmute @Kullanıcı#1233]** Yazmalısın!")
+      if(!mUser) msg.reply("Kullanıcı Bulunamadı!")
 
       mUser.removeRole(mUser.guild.roles.find("name", "mute"));
       mlg.send(`**<@${msg.author.id}>** , **${mUser}** Adlı Kişinin **Sus**turma Engelini **Kaldırdı**`)
       msg.channel.send(`**<@${msg.author.id}>** , **${mUser}** Adlı Kişinin **Sus**turma Engelini **Kaldırdı**`)
     }
-    if (command === "profil")
-    if (msg.channel.type !== "group") {
-        var Durum = msg.author.presence.status;
-        var Durm = (Durum == "online" ? (0x00AE86) : (Durum == "offline" ? (0x808080) : (Durum == "idle" ? (0xFFFF00) : (Durum == "dnd" ? (0xFF0000) : (0x00AE86)))))
-        var durm = (Durum == "online" ? ("Çevrimiçi") : (Durum == "offline" ? ("Çevrimdışı") : (Durum == "idle" ? ("Boşta") : (Durum == "dnd" ? ("Rahatsız Etmeyin") : ("Bilinmiyor/bulunamadı.")))))
-      const kullanicibilgimk = new Discord.RichEmbed()
-      .setAuthor(msg.author.username, msg.author.avatarURL)
-      .setColor(Durm)
-      .setTimestamp()
-      .addField('Kullanıcı İsmin:', msg.author.username + '#' + msg.author.discriminator)
-      .addField('ID:', msg.author.id)
-      .addField('Discord Uygulamasına Kayıt tarihi:', msg.author.createdAt)
-      .addField('Durum:', durm)
-      .addField('Şu an oynadığı oyun:', msg.author.presence.game ? msg.author.presence.game.name : 'Şu an oyun oynamıyor')
-      .addField('BOT mu?', msg.author.bot ? '\n Evet' : 'Hayır')
-      return msg.channel.sendEmbed(kullanicibilgimk);
+    client.on('message', msg => {
+  if(msg.content.toLowerCase === 'discord.gg') {
+   msg.delete(30)
+    msg.reply('Bu Discord Benim Korumam Altında Ve Reklam Yapman Yasak!');
   }
+});
     if(command === 'ban') {
       let bUser = msg.guild.member(msg.mentions.users.first () || msg.guild.members.get(args[0]));
       if(!bUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!ban @Kullanıcı#1233 Sebep]** Yazmalısın!")
@@ -359,75 +367,39 @@ reportschannel.send(reportEmbed);
        return;
        //https://www.youtube.com/watch?v=ukiVc8FSSpY&list=PLdnyVeMcpY7-GfaXaWBOb3ZQkJxP53BIx&index=4
    }
-    if (command === 'invite') {
-    if (msg.channel.type !== 'dm') {
-      const ozelmesajkontrol = new Discord.RichEmbed()
-    .setColor(0x00AE86)
-    .setTimestamp()
-    .setAuthor(msg.author.username, msg.author.avatarURL)
-    .addField(msg.author.username, 'Özel mesajlarını kontrol et!. :postbox:');
-    msg.channel.sendEmbed(ozelmesajkontrol) }
-      msg.author.sendMessage("Link: https://discordapp.com/oauth2/authorize?client_id=398818322831114250&scope=bot&permissions=8").then(message => console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] Gönderilen mesaj: ${message.content}`)).catch(console.error);
-  }
-  if(command === "yardım") {
-  msg.channel.sendMessage(`**Selam, ben AIR'e Özel Bot#4672  ** Şuanda görmekte olduğunuz kısım benim bütün komutlarımı göstermektedir.
-**Bilgi Komutları**
-\`\`\`fix
-!yardım - Botun bütün komutlarını size gösterir.
-!sunucubilgi - Sunucu hakkkında detaylı bilgi verir.
-!botbilgi - Bot hakkında bilgi verir.
-!profil - Mesaj Sahibinin Profil Bilgilerini Gösterir.
-!invite - Bot'u Sunucuna Eklemen İçin Davet Linki Oluşturup Özel Mesaj Olarak Atar.
-\`\`\`
 
-**Eğlence Komutları**
-\`\`\`fix
-!yaz - Yazılan Mesajın Aynısını Yazar.
-!resim  - Etiketlenen Kişinin Profil Resmini Gösterir.
-\`\`\`
-
-**Moderatör Komutları**
-\`\`\`fix
-!ban - Kişiyi Sunucudan Geçerli Bir Sebepten Dolayı Yasaklar/Banlar.
-!kick - Kişiyi Sunucudan Geçerli Bir Sebepten Dolayı Atar/kickler.
-!report - Kişiyi Report Eder.
-!sus - Susturma Engeli Koyar.
-!konuş - Susturma Engelini Kaldırır.
-!temizle - Belirtilen Sayı Kadar Mesaj Siler.
-\`\`\` `)
-}
- //   if(command === 'help') {
- //     let embed = new Discord.RichEmbed()
-//      .setAuthor(msg.author.username)
-//      .setDescription("**!Yardım Komutuna Göre ;**", true)
+    if(command === 'yardım') {
+      let embed = new Discord.RichEmbed()
+      .setAuthor(msg.author.username)
+      .setDescription("**!Yardım Komutuna Göre ;**", true)
 
 
-//      .addField("**!yardım**", "Botla İlgili Komutları Gösterir")
+      .addField("**!yardım**", "Botla İlgili Komutları Gösterir")
 
-//      .addField("**!sunucubilgi**", "Sunucu İle Bilgiler Gosterir", true)
+      .addField("**!sunucubilgi**", "Sunucu İle Bilgiler Gosterir", true)
 
-//      .addField("**!botbilgi**", "Bot İle İlgili Bilgiler Verir", true)
+      .addField("**!botbilgi**", "Bot İle İlgili Bilgiler Verir", true)
 
-//      .addField("**!temizle**", "Temizle Ve Bir Sayı Yazınca Mesajlar Silinir!!", true)
+      .addField("**!temizle**", "Temizle Ve Bir Sayı Yazınca Mesajlar Silinir!!", true)
 
-//      .addField("**!yaz**", "!yaz Yazdıktan Sonra Bir Mesaj Belirt Ve Yetkin Varsa O Mesajı Bot Yazsın!", true)
+      .addField("**!yaz**", "!yaz Yazdıktan Sonra Bir Mesaj Belirt Ve Yetkin Varsa O Mesajı Bot Yazsın!", true)
 
-//      .addField("**!at**", "!at @{nick} {sebep} Belirtilen Kisiyi Sunucuda Bir Nedenden dolayı Kickler", true)
+      .addField("**!at**", "!at @{nick} {sebep} Belirtilen Kisiyi Sunucuda Bir Nedenden dolayı Kickler", true)
 
-//      .addField("**!ban**", "!ban @{nick} {sebep} Belirtilen Kisiyi Sunucuda Bir Nedenden dolayı BANLAR", true)
+      .addField("**!ban**", "!ban @{nick} {sebep} Belirtilen Kisiyi Sunucuda Bir Nedenden dolayı BANLAR", true)
 
-//      .addField("**!sus**", "mute Adlı Rol Oluşturmak Şartı İle Kişiye Mute Atar")
-//
- //     .addField("**!konuş**", "mute Adlı Rol Oluşturması Şartı İle Susturulan Kişinin Susutrma Engelini Kaldırır")
-//
- //     .addField("Diğer Şeyler", "Bot Küfür Engeller Yeni Üye Mesajı Vb. Mesajlar Vardır ")
+      .addField("**!sus**", "mute Adlı Rol Oluşturmak Şartı İle Kişiye Mute Atar")
+
+      .addField("**!konuş**", "mute Adlı Rol Oluşturması Şartı İle Susturulan Kişinin Susutrma Engelini Kaldırır")
+
+      .addField("Diğer Şeyler", "Bot Küfür Engeller Yeni Üye Mesajı Vb. Mesajlar Vardır ")
 
 
- //     .setThumbnail(msg.author.avatarURL, true)
+      .setThumbnail(msg.author.avatarURL, true)
 
-      //.setColor(0xff0000)
-      //return msg.channel.sendEmbed(embed);
-    //}
+      .setColor(0xff0000)
+      return msg.channel.sendEmbed(embed);
+    }
 
     if(command === "resim") {
       let message = msg.channel.send("Profil Fotoğrafı Yollanıyor...");
@@ -445,7 +417,7 @@ reportschannel.send(reportEmbed);
            .setAuthor(msg.author.username)
            .setColor("#9B59B4")
            .addField("Sunucu İsmi", msg.guild.name, true)
-           .addField("Sunucu ID", msg.guild.id, true) 
+           .addField("Sunucu ID", msg.guild.id, true)
            .addField("Sunucu Kurucusu", msg.guild.owner)
            .addField("Sunucu Kişi Sayısı", msg.guild.memberCount, true)
            .addField("Oluşturulma Tarihi", msg.guild.createdAt)
@@ -457,44 +429,36 @@ reportschannel.send(reportEmbed);
       return msg.channel.sendEmbed(embed);
     }
 
- // const girismesaj = [
- // '**AIR e Özel Bot#4672 sunucunuza eklendi!**',
- // '**AIR e Özel Bot#4672** sunucunuzdaki insanlara kolaylıklar sağlar.',
- // 'Bot Yusuf • ☾✰#8331. tarafından geliştirilmektedir',
- // 'Botumuzun özelliklerini öğrenmek için !yardım komutunu kullanabilirsin.',
- // '**ÖNEMLİ:** Botun kullanması için mod-log kanalı açın ve deneme için',
- // 'birine report atın',
-    '',
-//  `**AIR e Özel Bot#4672** Discord Sunucusu https://discord.gg/ymUtNTN`,
-  //`**BOT Davet Link** https://discordapp.com/oauth2/authorize?client_id=288310817810546699&scope=bot&permissions=401812495`
-////]
+       if (command === "invite") {
+         let embed = new Discord.RichEmbed()
 
-//client.on('guildCreate', guild => {
-//    const generalChannel = guild.defaultChannel
-//    generalChannel.sendMessage(girismesaj)
-//})
-      //if(command === "botbilgi") {
-        //let embed = new Discord.RichEmbed()
+             .setDescription(`https://discordapp.com/oauth2/authorize?client_id=406095553928101890&scope=bot&permissions=2146958591`)
 
-        //.addField("Kurucu", "@Yusuf • ☾✰#8331", true)
+          msg.channel.sendEmbed(embed);
+       }
+      if(command === "botbilgi") {
+        let embed = new Discord.RichEmbed()
 
-        //.addField("Kitaplık Türü", "Java Script/Discord.js")
+        .addField("Kurucu", "@Yusuf • ☾✰#8331", true)
 
-      //  .addField("Version", "11.3.2", true)
+        .addField("Kitaplık Türü", "Java Script/Discord.js")
 
-      //  .addField("**Bot Komutları**", "**!Yardım** Yazarak Öğrenebilirsiniz!")
+        .addField("Version", "11.3.2", true)
 
-     //   .addField("**Bottaki Komut Sayısı**", "12")
+        .addField("**Bot Komutları**", "**!Yardım** Yazarak Öğrenebilirsiniz!")
 
-      //  .addField("Botu Eklemek İçin", " https://discordapp.com/oauth2/authorize?client_id=406095553928101890&scope=bot&permissions=2146958591")
-//
-      //  .setThumbnail("https://cdn.discordapp.com/attachments/429626059202232320/429930299867004928/resim.png")
+        .addField("**Bottaki Komut Sayısı**", "11")
+
+        .addField("Botu Eklemek İçin", " https://discordapp.com/oauth2/authorize?client_id=406095553928101890&scope=bot&permissions=2146958591")
+
+        .setThumbnail("https://cdn.discordapp.com/attachments/429626059202232320/429930299867004928/resim.png")
 
 
-    ///    .setColor(0xff0000)
+        .setColor(0xff0000)
 
-//      msg.channel.sendEmbed(embed);
-  //    }
+      msg.channel.sendEmbed(embed);
+      }
+
 });
 
-client.login(process.env.bot);
+client.login(procces.env.bot);
