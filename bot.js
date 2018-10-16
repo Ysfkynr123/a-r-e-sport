@@ -474,7 +474,7 @@ reportschannel.send(reportEmbed);
 client.on('guildCreate', guild => {
     const generalChannel = guild.defaultChannel
     generalChannel.sendMessage(girismesaj)
-})
+});
 
       if(command === "botbilgi") {
         let embed = new Discord.RichEmbed()
