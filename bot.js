@@ -417,6 +417,28 @@ reportschannel.send(reportEmbed);
 !temizle - Belirtilen Sayı Kadar Mesaj Siler.
 \`\`\` `)
 }
+  if(command === "botbilgi") {
+        let embed = new Discord.RichEmbed()
+
+        .addField("Kurucu", "@Yusuf • ☾✰#8331", true)
+
+        .addField("Kitaplık Türü", "Java Script/Discord.js")
+
+      .addField("Version", "11.3.2", true)
+
+        .addField("**Bot Komutları**", "**!Yardım** Yazarak Öğrenebilirsiniz!")
+
+        .addField("**Bottaki Komut Sayısı**", "12")
+
+        .addField("Botu Eklemek İçin", " https://discordapp.com/oauth2/authorize?client_id=406095553928101890&scope=bot&permissions=2146958591")
+
+        .setThumbnail("https://cdn.discordapp.com/attachments/429626059202232320/429930299867004928/resim.png")
+
+
+        .setColor(0xff0000)
+
+    msg.channel.sendEmbed(embed);
+      }
   
 });
 
