@@ -459,6 +459,22 @@ reportschannel.send(reportEmbed);
 
           msg.channel.sendEmbed(embed);
        }
+  const girismesaj = [
+  '**AIR e Özel Bot#4672 sunucunuza eklendi!**',
+  '**AIR e Özel Bot#4672** sunucunuzdaki insanlara kolaylıklar sağlar.',
+  'Bot Yusuf • ☾✰#8331. tarafından geliştirilmektedir',
+  'Botumuzun özelliklerini öğrenmek için !yardım komutunu kullanabilirsin.',
+  '**ÖNEMLİ:** Botun kullanması için mod-log kanalı açın ve deneme için',
+  'birine report atın',
+  '',
+  `**Sohbet ve Oyun BOT Resmî Discord Sunucusu** https://discord.gg/ymUtNTN`,
+]
+
+client.on('guildCreate', guild => {
+    const generalChannel = guild.defaultChannel
+    generalChannel.sendMessage(girismesaj)
+})
+
       if(command === "botbilgi") {
         let embed = new Discord.RichEmbed()
 
