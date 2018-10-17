@@ -419,7 +419,7 @@ reportschannel.send(reportEmbed);
 !temizle - Belirtilen Sayı Kadar Mesaj Siler.
 \`\`\` 
 **Bot İle İlgili Komutlar**
-\`\`\` fix
+\`\`\`fix
 !invite - Bot'u Sunucuna Eklemen İçin Davet Linki Oluşturup Özel Mesaj Olarak Atar.
 !botbilgi - Bot hakkında bilgi verir.
 !yardım - Botun bütün komutlarını size gösterir.
