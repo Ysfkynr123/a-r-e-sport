@@ -395,11 +395,11 @@ reportschannel.send(reportEmbed);
   }
   if(command === "yardım") {
   msg.channel.sendMessage(`**Selam, ben AIR'e Özel Bot#4672  ** Şuanda görmekte olduğunuz kısım benim bütün komutlarımı göstermektedir.
-**Bilgi Komutları**
+**Bot Bilgi Komutları**
 \`\`\`fix
 !yardım - Botun bütün komutlarını size gösterir.
-!sunucubilgi - Sunucu hakkkında detaylı bilgi verir.
-!profil - Mesaj Sahibinin Profil Bilgilerini Gösterir.
+!invite - Bot'u Sunucuna Eklemen İçin Davet Linki Oluşturup Özel Mesaj Olarak Atar.
+!botbilgi - Bot hakkında bilgi verir.
 
 \`\`\`
 
@@ -418,11 +418,10 @@ reportschannel.send(reportEmbed);
 !konuş - Susturma Engelini Kaldırır.
 !temizle - Belirtilen Sayı Kadar Mesaj Siler.
 \`\`\` 
-**Bot İle İlgili Komutlar**
+**Bilgi Komutları**
 \`\`\`fix
-!invite - Bot'u Sunucuna Eklemen İçin Davet Linki Oluşturup Özel Mesaj Olarak Atar.
-!botbilgi - Bot hakkında bilgi verir.
-!yardım - Botun bütün komutlarını size gösterir.
+!sunucubilgi - Sunucu hakkkında detaylı bilgi verir.
+!profil - Mesaj Sahibinin Profil Bilgilerini Gösterir.
 \`\`\` `)
 }
   //!invite - Bot'u Sunucuna Eklemen İçin Davet Linki Oluşturup Özel Mesaj Olarak Atar.
