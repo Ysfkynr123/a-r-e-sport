@@ -253,6 +253,9 @@ if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!konuş @Kulla
       }
       msg.channel.send(" **Bot Başarıyla Yeniden Başlatıldı!**")
     }
+  if (command === 'gecikme') {
+    msg.reply('Gecikme: **' + client.ping + ' ms** (Benim pingim :) )').then(message => console.log(`Gönderilen mesaj: ${message.content}`)).catch(console.error);
+  }
     if(command === "mute") {
       let mUser = msg.guild.member(msg.mentions.users.first () || msg.guild.members.get(args[0]));
       let mlg = msg.guild.channels.find("name", "mod-log")
