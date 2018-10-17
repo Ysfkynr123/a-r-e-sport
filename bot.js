@@ -403,10 +403,10 @@ reportschannel.send(reportEmbed);
 
 \`\`\`
 
-**Eğlence Komutları**
+**Bilgi Komutları**
 \`\`\`fix
-!yaz - Yazılan Mesajın Aynısını Yazar.
-!resim  - Etiketlenen Kişinin Profil Resmini Gösterir.
+!sunucubilgi - Sunucu hakkkında detaylı bilgi verir.
+!profil - Mesaj Sahibinin Profil Bilgilerini Gösterir.
 \`\`\`
 
 **Moderatör Komutları**
@@ -418,12 +418,13 @@ reportschannel.send(reportEmbed);
 !konuş - Susturma Engelini Kaldırır.
 !temizle - Belirtilen Sayı Kadar Mesaj Siler.
 \`\`\` 
-**Bilgi Komutları**
+  **Eğlence Komutları**
 \`\`\`fix
-!sunucubilgi - Sunucu hakkkında detaylı bilgi verir.
-!profil - Mesaj Sahibinin Profil Bilgilerini Gösterir.
+!yaz - Yazılan Mesajın Aynısını Yazar.
+!resim  - Etiketlenen Kişinin Profil Resmini Gösterir.
 \`\`\` `)
 }
+
   //!invite - Bot'u Sunucuna Eklemen İçin Davet Linki Oluşturup Özel Mesaj Olarak Atar.
       if(command === "resim") {
       let message = msg.channel.send("Profil Fotoğrafı Yollanıyor...");
