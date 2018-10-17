@@ -399,9 +399,8 @@ reportschannel.send(reportEmbed);
 \`\`\`fix
 !yardım - Botun bütün komutlarını size gösterir.
 !sunucubilgi - Sunucu hakkkında detaylı bilgi verir.
-!botbilgi - Bot hakkında bilgi verir.
 !profil - Mesaj Sahibinin Profil Bilgilerini Gösterir.
-!invite - Bot'u Sunucuna Eklemen İçin Davet Linki Oluşturup Özel Mesaj Olarak Atar.
+
 \`\`\`
 
 **Eğlence Komutları**
@@ -418,8 +417,15 @@ reportschannel.send(reportEmbed);
 !sus - Susturma Engeli Koyar.
 !konuş - Susturma Engelini Kaldırır.
 !temizle - Belirtilen Sayı Kadar Mesaj Siler.
+\`\`\` 
+**Bot İle İlgili Komutlar**
+\`\`\` 
+!invite - Bot'u Sunucuna Eklemen İçin Davet Linki Oluşturup Özel Mesaj Olarak Atar.
+!botbilgi - Bot hakkında bilgi verir.
+!yardım - Botun bütün komutlarını size gösterir.
 \`\`\` `)
 }
+  //!invite - Bot'u Sunucuna Eklemen İçin Davet Linki Oluşturup Özel Mesaj Olarak Atar.
       if(command === "resim") {
       let message = msg.channel.send("Profil Fotoğrafı Yollanıyor...");
       let target = msg.mentions.users.first() || msg.author;
