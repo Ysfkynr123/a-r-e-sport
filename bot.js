@@ -400,6 +400,7 @@ reportschannel.send(reportEmbed);
 !yardım - Botun bütün komutlarını size gösterir.
 !invite - Bot'u Sunucuna Eklemen İçin Davet Linki Oluşturup Özel Mesaj Olarak Atar.
 !botbilgi - Bot hakkında bilgi verir.
+!botping - **Botun Pingini** (Gecikmesini) Gösterir
 
 \`\`\`
 
