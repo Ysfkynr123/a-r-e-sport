@@ -253,8 +253,8 @@ if(!mUser) return msg.channel.send("Bu Komutu Kullanmak İçin **[!konuş @Kulla
       }
       msg.channel.send(" **Bot Başarıyla Yeniden Başlatıldı!**")
     }
-  if (command === 'gecikme') {
-    msg.reply('Gecikme: **' + client.ping + ' ms** (Benim pingim :) )').then(message => console.log(`Gönderilen mesaj: ${message.content}`)).catch(console.error);
+  if (command === 'botping') {
+    msg.reply('Gecikmem: **' + client.ping + ' ms**   (**!**:warning:**!** Bu Ping Botun Pingidir! ').then(message => console.log(`Gönderilen mesaj: ${message.content}`)).catch(console.error);
   }
     if(command === "mute") {
       let mUser = msg.guild.member(msg.mentions.users.first () || msg.guild.members.get(args[0]));
