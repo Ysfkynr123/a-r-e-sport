@@ -399,7 +399,6 @@ reportschannel.send(reportEmbed);
       });
     });
   }
-};
 exports.conf = {
   enabled: true,
   guildOnly: true,
