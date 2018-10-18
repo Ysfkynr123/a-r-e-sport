@@ -478,4 +478,4 @@ reportschannel.send(reportEmbed);
     }
 });
 
-//client.login(process.env.bot);
+client.login(process.env.bot);
