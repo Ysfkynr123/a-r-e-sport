@@ -39,12 +39,7 @@ function clean(text) {
         return text;
 }
 
-var prefix = "!";
-client.on("ready", () => {
-  console.log("Bu bot opensource bir projedir. http://github.com/arpelo");
-  console.log("Bot Giriş Yaptı Şu Kadar Sunucuya Hizmet veriyorum:" + client.guilds.size);
-  client.user.setGame(`github.com/arpelo | ${prefix}yardım`);
-});
+var prefix = "-";
 /*
 http://github.com/arpelo
 */
@@ -56,7 +51,6 @@ client.on("message", (message) => {
     const embed = new Discord.RichEmbed()
     .setTitle(`:mailbox_with_mail: xBOT Ticket System`)
     .setColor(0xCF40FA)
-    .setDescription(`Selam! Ben github.com/arpelo'un hazırlamış olduğu bir botum, sana yardımcı olmak için buradayım.`)
     .addField(`Tickets`, `[${prefix}ticketaç]() > Destek Bildirimi Oluşturur!\n[${prefix}ticketkapat]() > Ticket kapatır!`)
     .addField(`Diğer`, `[${prefix}ticketyardım]() > yardım menüsünü gösterir.\n[${prefix}ping]() > Discord API ping değerini gösterir.`)
     message.channel.send({ embed: embed });
@@ -122,7 +116,6 @@ if (message.content.toLowerCase().startsWith(prefix + `ticketkapat`)) {
 }
 
 /*
-http://github.com/arpelo
 */
 
 });
@@ -250,7 +243,7 @@ client.on("guildBanAdd", function(member) {
 
 });
 var servers = {};
-var prefix = "!"
+var prefix = "-"
 client.on('message', msg => {
   const args = msg.content.slice(prefix.length).split(/ +/g);
   const command = args.shift().toLowerCase();
@@ -280,12 +273,6 @@ client.on('message', msg => {
     purge();
 
   }
-    if(command === "tavsiye") {
-      let tavsiye = args.join(" ");
-        msg.delete();
-        
-        msg.author.sendMessage(tavsiye);
-    }
   if(command === "temizle") {
       let cont = msg.content.slice(prefix.length).split(" ");
       let args = cont.slice(1);
@@ -507,23 +494,23 @@ reportschannel.send(reportEmbed);
 
 **Bilgi Komutları**
 \`\`\`fix
-!sunucubilgi - Sunucu hakkkında detaylı bilgi verir.
-!profil - Mesaj Sahibinin Profil Bilgilerini Gösterir.
+-sunucubilgi - Sunucu hakkkında detaylı bilgi verir.
+-profil - Mesaj Sahibinin Profil Bilgilerini Gösterir.
 \`\`\`
 
 **Moderatör Komutları**
 \`\`\`fix
-!ban - Kişiyi Sunucudan Geçerli Bir Sebepten Dolayı Yasaklar/Banlar.
-!kick - Kişiyi Sunucudan Geçerli Bir Sebepten Dolayı Atar/kickler.
-!report - Kişiyi Report Eder.
-!sus - Susturma Engeli Koyar.
-!konuş - Susturma Engelini Kaldırır.
-!temizle - Belirtilen Sayı Kadar Mesaj Siler.
+-ban - Kişiyi Sunucudan Geçerli Bir Sebepten Dolayı Yasaklar/Banlar.
+-kick - Kişiyi Sunucudan Geçerli Bir Sebepten Dolayı Atar/kickler.
+-report - Kişiyi Report Eder.
+-sus - Susturma Engeli Koyar.
+-konuş - Susturma Engelini Kaldırır.
+-temizle - Belirtilen Sayı Kadar Mesaj Siler.
 \`\`\` 
   **Eğlence Komutları**
 \`\`\`fix
-!yaz - Yazılan Mesajın Aynısını Yazar.
-!resim  - Etiketlenen Kişinin Profil Resmini Gösterir.
+-yaz - Yazılan Mesajın Aynısını Yazar.
+-resim  - Etiketlenen Kişinin Profil Resmini Gösterir.
 \`\`\` `)
 }
 
