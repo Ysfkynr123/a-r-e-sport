@@ -73,6 +73,7 @@ if (message.content.toLowerCase().startsWith(prefix + `ticketaç`)) {
     message.guild.createChannel(`ticket-${message.author.id}`, "text").then(c => {
         let role = message.guild.roles.find("name", "Destek Ekibi");
         let role2 = message.guild.roles.find("name", "@everyone");
+        let role3 = message.guild.roles.find("name", "Yardım İsteyen");
         c.overwritePermissions(role, {
             SEND_MESSAGES: true,
             READ_MESSAGES: true
@@ -80,6 +81,10 @@ if (message.content.toLowerCase().startsWith(prefix + `ticketaç`)) {
         c.overwritePermissions(role2, {
             SEND_MESSAGES: false,
             READ_MESSAGES: false
+        });
+        c.overwritePermissions(role3, {
+             SEND_MESSAGES: true,
+             READ_MESSAGES: true,
         });
         c.overwritePermissions(message.author, {
             SEND_MESSAGES: true,
