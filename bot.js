@@ -232,7 +232,7 @@ const mapping = {
     '*': ':asterisk:'
 };
 
-'abcdefghijklmnopqrstuvwxyz'.split('').forEach(c => {
+'0123456789!?#*'.split('').forEach(c => {
 	mapping[c] = mapping[c.toUpperCase()] = `:regional_indicator_${c}:`;
 });
 
