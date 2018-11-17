@@ -236,8 +236,7 @@ const mapping = {
 	mapping[c] = mapping[c.toUpperCase()] = `:regional_indicator_${c}:`;
 });
 
-
-exports.run = function(client, message, args) {
+run = function(client, message, args) {
 
 	if (args.length < 1) return message.reply('Lütfen bir mesaj belirt. **Doğru Kullanım**: ?emojiyazı <mesaj>')
 		
