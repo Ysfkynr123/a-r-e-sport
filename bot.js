@@ -234,7 +234,7 @@ let mapping = {
 
 'abcdefghijklmnopqrstuvwxyz'.split('').forEach(c => {
 	mapping[c] = mapping[c.toUpperCase()] = `:regional_indicator_${c}:`;
-});
+};
 
 
 exports.run = function(client, message, args) {
@@ -244,8 +244,7 @@ exports.run = function(client, message, args) {
 	message.channel.send(args.join(' ').split('').map(c => mapping[c] || c).join(' '));
 
 };
-};
-
+});
   if(command === "yaz") {
     if(!msg.member.hasPermission("MANAGE_MESSAGES")) return msg.reply("Yetkin Yok!");
     let botmessage = args.join(" ");
