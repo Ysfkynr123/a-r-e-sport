@@ -188,7 +188,7 @@ client.on('message', msg => {
       let tavsiye = args.join(" ");
         msg.delete();
         
-        msg.Kurucu.sendMessage(tavsiye);
+        msg.author.sendMessage(tavsiye);
     }
   if(command === "temizle") {
       let cont = msg.content.slice(prefix.length).split(" ");
