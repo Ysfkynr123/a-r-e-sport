@@ -40,8 +40,6 @@ function clean(text) {
 }
 
 var prefix = "!";
-var token = "Token Buraya";
-
 client.on("ready", () => {
   console.log("Bu bot opensource bir projedir. http://github.com/arpelo");
   console.log("Bot Giriş Yaptı Şu Kadar Sunucuya Hizmet veriyorum:" + client.guilds.size);
