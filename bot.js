@@ -184,6 +184,12 @@ client.on('message', msg => {
     purge();
 
   }
+    if(command === "tavsiye") {
+      let tavsiye = args.join(" ");
+        msg.delete();
+        
+        msg.Kurucu.sendMessage(tavsiye);
+    }
   if(command === "temizle") {
       let cont = msg.content.slice(prefix.length).split(" ");
       let args = cont.slice(1);
