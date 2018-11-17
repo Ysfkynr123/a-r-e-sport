@@ -214,7 +214,7 @@ client.on('message', msg => {
 
   }
 if(command === "sayı") {
-const mapping = {
+let mapping = {
     ' ': '   ',
     '0': ':zero:',
     '1': ':one:',
@@ -232,18 +232,19 @@ const mapping = {
     '*': ':asterisk:'
 };
 
-'0123456789!?#*'.split('').forEach(c => {
+'abcdefghijklmnopqrstuvwxyz'.split('').forEach(c => {
 	mapping[c] = mapping[c.toUpperCase()] = `:regional_indicator_${c}:`;
 });
 
-run = function(client, message, args) {
+
+exports.run = function(client, message, args) {
 
 	if (args.length < 1) return message.reply('Lütfen bir mesaj belirt. **Doğru Kullanım**: ?emojiyazı <mesaj>')
 		
 	message.channel.send(args.join(' ').split('').map(c => mapping[c] || c).join(' '));
 
 };
-};
+
 
   if(command === "yaz") {
     if(!msg.member.hasPermission("MANAGE_MESSAGES")) return msg.reply("Yetkin Yok!");
