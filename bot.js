@@ -244,7 +244,7 @@ exports.run = function(client, message, args) {
 	message.channel.send(args.join(' ').split('').map(c => mapping[c] || c).join(' '));
 
 };
-};
+});
 
   if(command === "yaz") {
     if(!msg.member.hasPermission("MANAGE_MESSAGES")) return msg.reply("Yetkin Yok!");
