@@ -157,7 +157,7 @@ client.on("guildBanAdd", function(member) {
 
 });
 var servers = {};
-var prefix = "-"
+var prefix = "!"
 client.on('message', msg => {
   const args = msg.content.slice(prefix.length).split(/ +/g);
   const command = args.shift().toLowerCase();
@@ -228,11 +228,11 @@ client.on('message', msg => {
         //// +  `\n**Mesaj Sahibi = ${msg.author.username}**`
       }
 if(command === "embed") {
-let yaz = message.content.split(" ").slice(1).join(" ");
-message.delete();
+let yaz = msg.content.split(" ").slice(1).join(" ");
+msg.delete();
 const embed = new Discord.RichEmbed()
 .setDescription(yaz)
-message.channel.send({embed});
+msg.channel.send({embed});
   
 }
     if(command === "sus") {
