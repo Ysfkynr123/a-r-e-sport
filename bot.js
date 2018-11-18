@@ -416,23 +416,23 @@ reportschannel.send(reportEmbed);
 
 **Bilgi Komutları**
 \`\`\`fix
--sunucubilgi - Sunucu hakkkında detaylı bilgi verir.
--profil - Mesaj Sahibinin Profil Bilgilerini Gösterir.
+!sunucubilgi - Sunucu hakkkında detaylı bilgi verir.
+!profil - Mesaj Sahibinin Profil Bilgilerini Gösterir.
 \`\`\`
 
 **Moderatör Komutları**
 \`\`\`fix
--ban - Kişiyi Sunucudan Geçerli Bir Sebepten Dolayı Yasaklar/Banlar.
--kick - Kişiyi Sunucudan Geçerli Bir Sebepten Dolayı Atar/kickler.
--report - Kişiyi Report Eder.
--sus - Susturma Engeli Koyar.
--konuş - Susturma Engelini Kaldırır.
--temizle - Belirtilen Sayı Kadar Mesaj Siler.
+!ban - Kişiyi Sunucudan Geçerli Bir Sebepten Dolayı Yasaklar/Banlar.
+!kick - Kişiyi Sunucudan Geçerli Bir Sebepten Dolayı Atar/kickler.
+!report - Kişiyi Report Eder.
+!sus - Susturma Engeli Koyar.
+!konuş - Susturma Engelini Kaldırır.
+!temizle - Belirtilen Sayı Kadar Mesaj Siler.
 \`\`\` 
   **Eğlence Komutları**
 \`\`\`fix
--yaz - Yazılan Mesajın Aynısını Yazar.
--resim  - Etiketlenen Kişinin Profil Resmini Gösterir.
+!yaz - Yazılan Mesajın Aynısını Yazar.
+!resim  - Etiketlenen Kişinin Profil Resmini Gösterir.
 \`\`\` `)
 }
 
