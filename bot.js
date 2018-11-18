@@ -227,6 +227,14 @@ client.on('message', msg => {
         msg.channel.send(botmessage);
         //// +  `\n**Mesaj Sahibi = ${msg.author.username}**`
       }
+if(command === "embed") {
+let yaz = message.content.split(" ").slice(1).join(" ");
+message.delete();
+const embed = new Discord.RichEmbed()
+.setDescription(yaz)
+message.channel.send({embed});
+  
+}
     if(command === "sus") {
       let mUser = msg.guild.member(msg.mentions.users.first () || msg.guild.members.get(args[0]));
       let mlg = msg.guild.channels.find("name", "mod-log")
