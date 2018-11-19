@@ -425,7 +425,7 @@ reportschannel.send(reportEmbed);
 !ban - Kişiyi Sunucudan Geçerli Bir Sebepten Dolayı Yasaklar/Banlar.
 !kick - Kişiyi Sunucudan Geçerli Bir Sebepten Dolayı Atar/kickler.
 !report - Kişiyi Report Eder.
-!sus - Susturma Engeli Koyar.
+!sus - Konuşma Engeli Koyar./Susturur
 !konuş - Susturma Engelini Kaldırır.
 !temizle - Belirtilen Sayı Kadar Mesaj Siler.
 \`\`\` 
